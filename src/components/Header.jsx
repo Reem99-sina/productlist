@@ -37,7 +37,7 @@ export default function Header(props) {
                     <input type="text" placeholder='search men cloth or women cloth or jewelery' className='form-control w-50' onBlur={(ele) => search(ele)} />
                     <div>
                         {localStorage.getItem('userToKen') === null ? <> <Link className='btn btn-outline-dark' to="/login"><i className='fas fa-sign-in'></i> login</Link>
-                            <a className='btn btn-outline-dark mx-2'><i className='fas fa-user-plus '></i> register</a>
+                            <Link className='btn btn-outline-dark mx-2' to='/register'><i className='fas fa-user-plus '></i> register</Link>
                         </> : <>
                             <Link className='btn btn-outline-dark' to='/cartPage' ><i className='fas fa-shopping-cart'></i> cart({count})</Link>
                             <a className='btn btn-outline-dark' onClick={props.logout}> logout</a>
