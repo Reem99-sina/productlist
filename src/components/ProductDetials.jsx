@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { selectedProducts, removeProductReducer, increase, addcart } from './redux/actions/productAction'
@@ -27,7 +28,10 @@ export default function ProductDetials() {
             dispatch(removeProductReducer())
         }
     }, [productId])
-    return (
+    return (<>
+        <Helmet>
+            <title>product details</title>
+        </Helmet>
         <div className='container'>
             {product ?
                 <div class="row g-5" >
@@ -42,6 +46,6 @@ export default function ProductDetials() {
                             <button className='btn btn-danger text-white' onClick={increaseCount}  > Add product</button>
                         </div></div>
                 </div> : <div className='fw-bold'>.....loading</div>}
-        </div>
+        </div></>
     )
 }

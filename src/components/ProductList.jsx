@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import ProductComponent from './ProductComponent'
 import { useDispatch } from 'react-redux'
 import { setProducts } from './redux/actions/productAction'
+import { Helmet } from 'react-helmet'
 
 const ProductList = () => {
     const [data, setdata] = useState([])
@@ -18,10 +19,15 @@ const ProductList = () => {
         getProducts()
     }, [])
     return (
-        <div className='container'>
-            <div className='row'>
-                {data ? <ProductComponent /> : ""}
-            </div></div>
+        <>
+            <Helmet>
+                <title>product details</title>
+            </Helmet>
+
+            <div className='container'>
+                <div className='row'>
+                    {data ? <ProductComponent /> : ""}
+                </div></div> </>
     )
 }
 export default ProductList

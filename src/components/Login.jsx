@@ -1,9 +1,11 @@
 import axios from 'axios'
 import Joi from 'joi'
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { useNavigate } from 'react-router-dom'
 
 export default function Login(props) {
+
     let navigate = useNavigate()
     const [user, setUser] = useState({
         email: "",
@@ -45,6 +47,9 @@ export default function Login(props) {
         return schema.validate(user, { abortEarly: false })
     }
     return (<>
+        <Helmet>
+            <title>login</title>
+        </Helmet>
         <div className='container'>
             <h2 className='my-2'> login now</h2>
             {

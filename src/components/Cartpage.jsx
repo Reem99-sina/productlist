@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
 import Cartcolumn from './Cartcolumn.jsx'
 
@@ -12,6 +13,9 @@ export default function Cartpage() {
     })
     console.log(total)
     return (<>
+    <Helmet>
+            <title>cartpage</title>
+        </Helmet>
         <div className='container'>
             <table class="table">
                 <tbody>

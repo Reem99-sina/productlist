@@ -1,6 +1,7 @@
 import axios from 'axios'
 import Joi from 'joi'
 import React, { useState } from 'react'
+import { Helmet } from 'react-helmet'
 import { useNavigate } from 'react-router-dom'
 
 export default function Register() {
@@ -49,33 +50,37 @@ export default function Register() {
         })
         return schema.validate(user, { abortEarly: false })
     }
-    return (<div className='container'>
-        <h2 className='my-2'> register now</h2>
-        {
-            errorlist.map((error, index) => {
-                if (index == 4) {
-                    return <div key={index} className='alert alert-danger'>password invalid</div>
-                } else {
-                    return <div key={index} className='alert alert-danger'>{error.message}</div>
-                }
-            })
-        }
-        {error ? <div className='alert alert-danger'>{error}</div> : ''}
+    return (<>
+        <Helmet>
+            <title>register</title>
+        </Helmet>
+        <div className='container'>
+            <h2 className='my-2'> register now</h2>
+            {
+                errorlist.map((error, index) => {
+                    if (index == 4) {
+                        return <div key={index} className='alert alert-danger'>password invalid</div>
+                    } else {
+                        return <div key={index} className='alert alert-danger'>{error.message}</div>
+                    }
+                })
+            }
+            {error ? <div className='alert alert-danger'>{error}</div> : ''}
 
-        <form onSubmit={submitEvent}>
-            <label htmlFor='first_name'>first_name </label>
-            <input onChange={getUser} type='text' name='first_name' className='form-control my-3' />
-            <label htmlFor='last_name'>last_name </label>
-            <input onChange={getUser} type='text' name='last_name' className='form-control my-3' />
-            <label htmlFor='age'>age </label>
-            <input onChange={getUser} type='number' name='age' className='form-control my-3' />
-            <label htmlFor='email'>email </label>
-            <input onChange={getUser} type='email' name='email' className='form-control my-3' />
-            <label htmlFor='password'>password </label>
-            <input onChange={getUser} type='password' name='password' className='form-control my-3' />
-            <button className='btn btn-outline-info'> {isloading ? <i className='fas fa-spinner fa-spin'></i> : "register"}
-            </button>
-        </form></div>
+            <form onSubmit={submitEvent}>
+                <label htmlFor='first_name'>first_name </label>
+                <input onChange={getUser} type='text' name='first_name' className='form-control my-3' />
+                <label htmlFor='last_name'>last_name </label>
+                <input onChange={getUser} type='text' name='last_name' className='form-control my-3' />
+                <label htmlFor='age'>age </label>
+                <input onChange={getUser} type='number' name='age' className='form-control my-3' />
+                <label htmlFor='email'>email </label>
+                <input onChange={getUser} type='email' name='email' className='form-control my-3' />
+                <label htmlFor='password'>password </label>
+                <input onChange={getUser} type='password' name='password' className='form-control my-3' />
+                <button className='btn btn-outline-info'> {isloading ? <i className='fas fa-spinner fa-spin'></i> : "register"}
+                </button>
+            </form></div></>
     )
 }
 

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { searchProducts } from './redux/actions/productAction'
@@ -19,6 +20,9 @@ export default function Header(props) {
         console.log(productSearch)
     }
     return (<>
+        <Helmet>
+            <title>header</title>
+        </Helmet>
         <div className="navbar navbar-expand-md navbar-light bg-light">
             <div className="container-fluid">
                 <a className="navbar-brand" >fake shop</a>
