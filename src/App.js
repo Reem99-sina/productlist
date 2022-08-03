@@ -25,7 +25,7 @@ function App() {
   }
   function Forwardorback({ children }) {
     if (!localStorage.getItem("userToKen")) {
-      <Navigate to='/login' />
+      return <Navigate to='/login' />
     } else {
       return children
     }
@@ -35,7 +35,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Register />} />
       <Route path='register' element={<Register />} />
-      <Route path='login' element={<Login getUserData={getUserData} />} />
+      <Route path='/login' element={<Login getUserData={getUserData} />} />
       <Route path='productlist' element={<ProductList />} />
       <Route path='cartPage' element={<Forwardorback><Cartpage /></Forwardorback>} />
       <Route path='product/:productId' element={<Forwardorback><ProductDetials /></Forwardorback>} />
