@@ -5,7 +5,7 @@ export default function ProductComponent() {
     let valueSearch = useSelector((state) => state.products.products)
     const products = useSelector((state) => state.allProducts.products)
     console.log(valueSearch)
-    if (valueSearch.length != 0) {
+    if (valueSearch.length !== 0) {
         const renderListSearch = valueSearch.map((product) => {
             return <div key={product.id} className='col-md-4 g-4'>
                 <Link to={`/product/${product.id}`} className='text-decoration-none text-dark'>

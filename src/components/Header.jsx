@@ -13,7 +13,7 @@ export default function Header(props) {
     function search(ele) {
         localStorage.setItem("searchValue", ele.target.value)
         let productSearch = products.filter((ele) => {
-            return ele.category.includes(localStorage.getItem('searchValue')) ? ele : ""
+            return ele.category.startsWith(localStorage.getItem('searchValue')) ? ele : ""
         })
         display(searchProducts(productSearch))
         console.log(productSearch)
