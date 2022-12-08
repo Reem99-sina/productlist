@@ -40,12 +40,12 @@ export default function Header(props) {
                     </ul>
                     <input type="text" placeholder='search men cloth or women cloth or jewelery' className='form-control w-50' onBlur={(ele) => search(ele)} />
                     <div>
-                        {localStorage.getItem('userToKen') === null ? <> <Link className='btn btn-outline-dark' to="/productlist/login"><i className='fas fa-sign-in'></i> login</Link>
-                            <Link className='btn btn-outline-dark mx-2' to='/productlist/register'><i className='fas fa-user-plus '></i> register</Link>
-                        </> : <>
-                            <Link className='btn btn-outline-dark' to='/productlist/cartPage' ><i className='fas fa-shopping-cart'></i> cart({count})</Link>
-                            <Link className='btn btn-outline-dark' onClick={props.logout}> logout</Link>
-                        </>}
+                        <Link className='btn btn-outline-dark' to="/productlist/login"><i className='fas fa-sign-in'></i> login</Link>
+                        <Link className='btn btn-outline-dark mx-2' to='/productlist/register'><i className='fas fa-user-plus '></i> register</Link>
+
+                        <Link className='btn btn-outline-dark' to='/productlist/cartPage' ><i className='fas fa-shopping-cart'></i> cart({count})</Link>
+                        <Link className='btn btn-outline-dark' onClick={props.logout}> logout</Link>
+
 
 
 
