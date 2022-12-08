@@ -58,7 +58,7 @@ export default function Register() {
             <h2 className='my-2'> register now</h2>
             {
                 errorlist.map((error, index) => {
-                    if (index == 4) {
+                    if (index === 4) {
                         return <div key={index} className='alert alert-danger'>password invalid</div>
                     } else {
                         return <div key={index} className='alert alert-danger'>{error.message}</div>

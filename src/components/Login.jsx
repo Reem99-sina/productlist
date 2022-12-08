@@ -32,7 +32,7 @@ export default function Login(props) {
                 localStorage.setItem("userToKen", data.token);
                 setIsloading(false)
                 props.getUserData()
-                navigate('/productlist')
+                navigate('/productlist/products')
             } else {
                 setIsloading(false)
                 seterror(data.message)
@@ -54,7 +54,7 @@ export default function Login(props) {
             <h2 className='my-2'> login now</h2>
             {
                 errorlist.map((error, index) => {
-                    if (index == 4) {
+                    if (index === 4) {
                         return <div key={index} className='alert alert-danger'>password invalid</div>
                     } else {
                         return <div key={index} className='alert alert-danger'>{error.message}</div>

@@ -12,7 +12,7 @@ export default function ProductComponent() {
             return <><Helmet>
                 <title>product component</title>
             </Helmet><div key={product.id} className='col-md-4 g-4'>
-                    <Link to={`/product/${product.id}`} className='text-decoration-none text-dark'>
+                    <Link to={`/productlist/product/${product.id}`} className='text-decoration-none text-dark'>
                         <div class="card " >
                             <img src={product.image} class="card-img-top" alt="..." />
                             <div class="card-body">
