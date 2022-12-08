@@ -33,12 +33,12 @@ function App() {
   return (<>
     <Header logout={logout} userData={userData} />
     <Routes>
-      <Route path='/productlist/' element={<Login />} />
+      <Route path='/productlist/' element={<ProductList />} />
       <Route path='/productlist/register' element={<Register />} />
       <Route path='/productlist/login' element={<Login getUserData={getUserData} />} />
       <Route path='/productlist/products' element={<ProductList />} />
-      <Route path='/productlist/cartPage' element={<Forwardorback><Cartpage /></Forwardorback>} />
-      <Route path='/productlist/product/:productId' element={<Forwardorback><ProductDetials /></Forwardorback>} />
+      <Route path='/productlist/cartPage' element={<Cartpage />} />
+      <Route path='/productlist/product/:productId' element={<ProductDetials />} />
       <Route path='*' element={<h3>404</h3>} />
     </Routes>
   </>
