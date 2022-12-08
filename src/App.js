@@ -33,7 +33,7 @@ function App() {
   return (<>
     <Header logout={logout} userData={userData} />
     <Routes>
-      <Route path='/productlist' element={<Register />} />
+      <Route path='/productlist/' element={<Login />} />
       <Route path='/productlist/register' element={<Register />} />
       <Route path='/productlist/login' element={<Login getUserData={getUserData} />} />
       <Route path='/productlist/products' element={<ProductList />} />
