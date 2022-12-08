@@ -31,12 +31,12 @@ export default function Header(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav m-auto mb-2 mb-lg-0">
-                        {localStorage.getItem('userToKen') !== null ? <>
+                        
                             <li className="nav-item">
                                 <Link className="nav-link" to="/productlist/products">Products</Link>
                             </li>
-                        </> : ""
-                        }
+                    
+                        
                     </ul>
                     <input type="text" placeholder='search men cloth or women cloth or jewelery' className='form-control w-50' onBlur={(ele) => search(ele)} />
                     <div>
