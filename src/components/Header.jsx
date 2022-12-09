@@ -31,24 +31,18 @@ export default function Header(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav m-auto mb-2 mb-lg-0">
-                        
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/productlist/products">Products</Link>
-                            </li>
-                    
-                        
-                    </ul>
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/productlist/products">Products</Link> </li> </ul>
+
                     <input type="text" placeholder='search men cloth or women cloth or jewelery' className='form-control w-50' onBlur={(ele) => search(ele)} />
+
                     <div>
                         <Link className='btn btn-outline-dark' to="/productlist/login"><i className='fas fa-sign-in'></i> login</Link>
                         <Link className='btn btn-outline-dark mx-2' to='/productlist/register'><i className='fas fa-user-plus '></i> register</Link>
 
                         <Link className='btn btn-outline-dark' to='/productlist/cartPage' ><i className='fas fa-shopping-cart'></i> cart({count})</Link>
                         <Link className='btn btn-outline-dark' onClick={props.logout}> logout</Link>
-
-
-
-
                     </div>
                 </div>
             </div>

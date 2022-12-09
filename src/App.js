@@ -21,11 +21,11 @@ function App() {
   function logout() {
     localStorage.removeItem('userToKen')
     setuserData(null)
-    navigate('/login')
+    navigate('/productlist/login')
   }
   function Forwardorback({ children }) {
     if (!localStorage.getItem("userToKen")) {
-      return <Navigate to='/login' />
+      return <Navigate to='/productlist/login' />
     } else {
       return children
     }
