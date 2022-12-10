@@ -32,7 +32,7 @@ export default function Login(props) {
                 localStorage.setItem("userToKen", data.token);
                 setIsloading(false)
                 props.getUserData()
-                navigate('/productlist/')
+                navigate('/productlist')
             } else {
                 setIsloading(false)
                 seterror(data.message)

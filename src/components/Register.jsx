@@ -33,7 +33,7 @@ export default function Register() {
             let { data } = await axios.post('https://route-egypt-api.herokuapp.com/signup', user);
             if (data.message === "success") {
                 setIsloading(false)
-                navigate('/productlist/login')
+                navigate('/login')
             } else {
                 seterror(data.message)
                 setIsloading(false)

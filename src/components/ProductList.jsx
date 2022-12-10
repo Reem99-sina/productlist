@@ -17,7 +17,7 @@ const ProductList = () => {
     }
     useEffect(() => {
         getProducts()
-    }, [data])
+    }, [data,getProducts])
     return (
         <>
             <Helmet>
