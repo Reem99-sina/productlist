@@ -9,7 +9,6 @@ export default function Cartcolumn() {
     function decreaseCount(ele) {
         dispatch(decrease())
         dispatch(deletecart(ele.target.dataset.id))
-        console.log(ele.target.dataset.id)
     }
     renderList = cart.map((product) => {
         return <tr key={product.id} className='col-md-4 g-4'>

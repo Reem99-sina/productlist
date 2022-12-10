@@ -25,7 +25,7 @@ export default function Header(props) {
         </Helmet>
         <div className="navbar navbar-expand-md navbar-light bg-light">
             <div className="container-fluid">
-                <Link className="navbar-brand" to='/productlist/products'>fake shop</Link>
+                <Link className="navbar-brand" to="/productlist/">fake shop</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -33,7 +33,7 @@ export default function Header(props) {
                     <ul className="navbar-nav m-auto mb-2 mb-lg-0">
 
                         <li className="nav-item">
-                            <Link className="nav-link" to="/productlist/products">Products</Link> </li> </ul>
+                            <Link className="nav-link" to="/productlist/">Products</Link> </li> </ul>
 
                     <input type="text" placeholder='search men cloth or women cloth or jewelery' className='form-control w-50' onBlur={(ele) => search(ele)} />
 

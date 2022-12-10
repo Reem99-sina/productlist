@@ -36,7 +36,7 @@ function App() {
       <Route path='/productlist/' element={<ProductList />} />
       <Route path='/productlist/register' element={<Register />} />
       <Route path='/productlist/login' element={<Login getUserData={getUserData} />} />
-      <Route path='/productlist/products' element={<ProductList />} />
+      {/* <Route path='/productlist/products' element={<ProductList />} /> */}
       <Route path='/productlist/cartPage' element={<Cartpage />} />
       <Route path='/productlist/product/:productId' element={<ProductDetials />} />
       <Route path='*' element={<h3>404</h3>} />
