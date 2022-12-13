@@ -12,10 +12,12 @@ export default function ProductDetials() {
     const dispatch = useDispatch()
     console.log(product)
     async function singleProduct() {
-        const { data } = await axios.get(`https://fakestoreapi.com/products/${productId}`).catch((err) => {
-            console.log("Err", err)
-        })
-        dispatch(selectedProducts(data))
+        await axios.get(`https://fakestoreapi.com/products/${productId}`).then(({ data }) => {
+            dispatch(selectedProducts(data)).catch((error)=>{
+                console.log(error)
+            })
+
+        },[product])
     }
     function increaseCount() {
         dispatch(increase())
