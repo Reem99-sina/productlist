@@ -28,7 +28,7 @@ export default function ProductDetials() {
         return () => {
             dispatch(removeProductReducer())
         }
-    },[product])
+    },[productId])
     return (<>
         <Helmet>
             <title>product details</title>
