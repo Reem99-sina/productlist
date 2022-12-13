@@ -12,11 +12,8 @@ export default function ProductDetials() {
     const dispatch = useDispatch()
     async function singleProduct() {
         await axios.get(`https://fakestoreapi.com/products/${productId}`).then(({ data }) => {
-            dispatch(selectedProducts(data)).catch((error)=>{
-                console.log(error)
-            })
-
-        })
+            dispatch(selectedProducts(data))
+        }).catch((error) => { console.log(error) })
     }
     function increaseCount() {
         dispatch(increase())
@@ -28,14 +25,14 @@ export default function ProductDetials() {
         return () => {
             dispatch(removeProductReducer())
         }
-    },[productId])
+    }, [productId])
     return (<>
         <Helmet>
             <title>product details</title>
         </Helmet>
         <div className='container'>
             {product ?
-                <div class="row g-5" >
+                <div class="row g-5" key={product.id} >
                     <div className='col-md-6'>
                         <img src={image} class="card-img-top" alt="..." /></div>
                     <div className='col-md-6'>
