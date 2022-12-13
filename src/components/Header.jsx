@@ -34,16 +34,18 @@ export default function Header(props) {
 
                         <li className="nav-item">
                             <Link className="nav-link" to="productlist">Products</Link> </li> </ul>
-
+                    {/* </ul> */}
                     <input type="text" placeholder='search men cloth or women cloth or jewelery' className='form-control w-50' onBlur={(ele) => search(ele)} />
 
-                    <div>
-                        <Link className='btn btn-outline-dark' to="login"><i className='fas fa-sign-in'></i> login</Link>
-                        <Link className='btn btn-outline-dark mx-2' to='register'><i className='fas fa-user-plus '></i> register</Link>
+                    <ul className="navbar-nav m-auto mb-2 mb-lg-0">
 
-                        <Link className='btn btn-outline-dark' to='cartPage' ><i className='fas fa-shopping-cart'></i> cart({count})</Link>
-                        <Link className='btn btn-outline-dark' onClick={props.logout}> logout</Link>
-                    </div>
+                        <li className="nav-item">
+                            <Link className='btn btn-outline-dark' to="login"><i className='fas fa-sign-in'></i> login</Link></li>
+                        <li className="nav-item">  <Link className='btn btn-outline-dark mx-2' to='register'><i className='fas fa-user-plus '></i> register</Link></li>
+
+                        <li className="nav-item">    <Link className='btn btn-outline-dark' to='cartPage' ><i className='fas fa-shopping-cart'></i> cart({count})</Link></li>
+                        <li className="nav-item">     <button className='btn btn-outline-dark' onClick={props.logout}> logout</button></li>
+                    </ul>
                 </div>
             </div>
         </div>

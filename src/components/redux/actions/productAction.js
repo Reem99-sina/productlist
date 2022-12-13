@@ -45,3 +45,8 @@ export function deletecart(data) {
         payload: data
     }
 }
+export const displayCarts = () => {
+    return {
+        type: ActionTypes.DISPLAYCARTS,
+    }
+}

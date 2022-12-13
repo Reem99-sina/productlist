@@ -13,11 +13,11 @@ const ProductList = () => {
         const { data } = await axios.get('https://fakestoreapi.com/products')
         display(setProducts(data))
         setdata(data)
-        console.log(data)
+        
     }
     useEffect(() => {
         getProducts()
-    }, [data,getProducts])
+    })
     return (
         <>
             <Helmet>

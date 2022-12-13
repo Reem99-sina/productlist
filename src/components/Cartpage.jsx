@@ -11,9 +11,10 @@ export default function Cartpage() {
     cart.forEach(element => {
         total += element.price
     })
-    console.log(total)
+    console.log(useSelector((state) => state.addcart.cart))
+
     return (<>
-    <Helmet>
+        <Helmet>
             <title>cartpage</title>
         </Helmet>
         <div className='container'>

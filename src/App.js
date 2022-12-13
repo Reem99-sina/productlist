@@ -31,20 +31,23 @@ function App() {
   //   }
   // }
   return (<>
-    <BrowserRouter>
-      <Header logout={logout} userData={userData} />
-      <ProductList />
-      <Routes>
-        <Route path='/' element={<ProductList />} />
+    <Header logout={logout} userData={userData} />
+    {/* <ProductList /> */}
+    <Routes>
+      <Route path='/' element={<ProductList />} />
 
-        <Route path='productlist' element={<ProductList />} />
-        <Route path='register' element={<Register />} />
-        <Route path='login' element={<Login getUserData={getUserData} />} />
-        {/* <Route path='/productlist/products' element={<ProductList />} /> */}
-        <Route path='cartPage' element={<Cartpage />} />
-        <Route path='product/:productId' element={<ProductDetials />} />
-        <Route path='*' element={<h3>404</h3>} />
-      </Routes></BrowserRouter>
+      <Route path='productlist' element={<ProductList />} />
+      <Route path='/productlist/register' element={<Register />} />
+      <Route path='/productlist/login' element={<Login getUserData={getUserData} />} />
+      <Route path='cartPage' element={<Cartpage />} />
+      <Route path='/productlist/product' element={<ProductDetials />} >
+        <Route path=':productId' element={<ProductDetials />} />
+      </Route>
+
+      {/* <Route path='*' element={<ProductList />} /> */}
+
+    </Routes>
+
   </>
   );
 }

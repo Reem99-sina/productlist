@@ -52,9 +52,10 @@ export function cart(prevState = cartproduct, { type, payload }) {
             return { ...prevState, products: [...prevState.products, payload] }
         }
         case ActionTypes.remove: {
-            let data = prevState.products.filter((ele) => { return ele.id !== payload })
+            let data = prevState.products.filter((ele) => { return ele.id !== Number(payload) ? ele : '' })
+           
             return { ...prevState, products: data }
-        }
+        } 
         default:
             return prevState
     }
