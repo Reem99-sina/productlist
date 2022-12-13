@@ -10,14 +10,13 @@ export default function ProductDetials() {
     const { image, title, price, category, description } = product
     const { productId } = useParams()
     const dispatch = useDispatch()
-    console.log(product)
     async function singleProduct() {
         await axios.get(`https://fakestoreapi.com/products/${productId}`).then(({ data }) => {
             dispatch(selectedProducts(data)).catch((error)=>{
                 console.log(error)
             })
 
-        },[product])
+        })
     }
     function increaseCount() {
         dispatch(increase())
@@ -29,7 +28,7 @@ export default function ProductDetials() {
         return () => {
             dispatch(removeProductReducer())
         }
-    })
+    },[product])
     return (<>
         <Helmet>
             <title>product details</title>
